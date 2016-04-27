@@ -18,7 +18,7 @@ exports = module.exports = {
             }
 
         }
-        
+
         var amount = 0
 
         if(gamestate.commonCards.length == 0) {
@@ -28,6 +28,8 @@ exports = module.exports = {
             var flag = 0
             gamestate.commonCards.forEach(function (carta) {
                 if (carta.type === gamestate.players[gamestate.me].cards[0].type || carta.type === gamestate.players[gamestate.me].cards[1].type) {
+                    flag = 1
+                } else if (carta.rank === gamestate.players[gamestate.me].cards[0].rank || carta.rank === gamestate.players[gamestate.me].cards[1].rank) {
                     flag = 1
                 }
             })
