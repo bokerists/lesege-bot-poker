@@ -1,4 +1,3 @@
-
 'use strict';
 
 const player = require('./player');
@@ -23,7 +22,6 @@ app.get('/version', function(req, res) {
 app.post('/bet', function(req, res) {
   res.status(200).send(player.bet(req.body).toString());
 });
-
 
 const port = parseInt(process.env['PORT'] || 1337);
 

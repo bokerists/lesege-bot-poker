@@ -1,30 +1,19 @@
-
 exports = module.exports = {
 
-  VERSION: 'Superstar poker js-player',
 
-  bet: function (gamestate) {
+    VERSION: 'Superstar poker js-player',
 
-    //
-    // gamestate contains info about the state of the game.
-    // check the documentation at https://bot-poker.herokuapp.com/wiki#gamestate for further info about the data structure.
+    bet: function (gamestate) {
+        var amount = 0
 
-    //
-    // you just have to return the amount that you want to bet.
-
-
-
-    // enjoy the game!
-
-    //
-    // currently we just fold every single hand.
-
-    'use strict';
-
-    console.log(`Currently playing tournament ${gamestate.tournamentId}`);
-
-    return 0;
-
+        if (gamestate.players[gamestate.me].cards[0].rank === gamestate.players[gamestate.me].cards[1].rank) {
+            amount = gamestate.callAmount
+        } else if
+        (gamestate.players[gamestate.me].cards[0].rank === "A" || gamestate.players[gamestate.me].cards[1].rank === "A") {
+            amount = gamestate.callAmount
+        }
+    
+      return amount
   }
 
 };
